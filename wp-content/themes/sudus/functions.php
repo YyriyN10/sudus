@@ -115,37 +115,13 @@ function sudus_content_width() {
 add_action( 'after_setup_theme', 'sudus_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function sudus_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'sudus' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'sudus' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'sudus_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function sudus_scripts() {
 	wp_enqueue_style( 'sudus-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'sudus-style', 'rtl', 'replace' );
+	wp_enqueue_style('sudus-main-styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), _S_VERSION );
 
-	wp_enqueue_script( 'sudus-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'sudus-main-js', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'sudus_scripts' );
 
@@ -165,14 +141,14 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Customizer additions.
+ * Carbon init
  */
-require get_template_directory() . '/inc/customizer.php';
+
+require get_template_directory() . '/inc/carbon-init.php';
+
 
 /**
- * Load Jetpack compatibility file.
+ * Custom post types
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
+require get_template_directory() . '/inc/custom-post-types.php';
