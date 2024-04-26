@@ -8,6 +8,14 @@ body{
   line-height: 1.6;
   padding-right: 0 !important;
 
+  @media(max-width: 767px){
+    font-size: 16px;
+  }
+
+  @media(max-width: 440px){
+    font-size: 14px;
+  }
+
   .modal.show {
     display: flex !important;
     height: 100%;
@@ -58,6 +66,38 @@ svg{
   flex-grow: 1;
 }
 
+.case-banner{
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: #221ec4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  svg{
+    width: 250px;
+    margin-bottom: 50px;
+  }
+
+  p{
+    width: 100%;
+    font-size: 26px;
+    font-family: $f-bold;
+    text-align: center;
+    padding: 0 20vw;
+    margin-bottom: 30px;
+    color: #ffffff;
+
+    @media(max-width: 440px){
+      font-size: 24px;
+      padding: 0 15vw;
+    }
+  }
+
+}
+
 /*--- Site header ---*/
 
 .site-header{
@@ -70,6 +110,9 @@ svg{
 
   &.fixed-header{
     transform: translateY(-110%);
+    background-color: $color-blue;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   &.fixed-header-visible{
@@ -85,11 +128,19 @@ svg{
   padding: 0;
   margin: 0;
   border: none;
+  position: relative;
+  z-index: 12;
 
   span{
     transition: all 0.5s;
     height: 2px;
     display: block;
+    background-color: $color-white;
+  }
+
+  @media(max-width: 992px){
+    display: grid;
+    width: 30px;
   }
 
   &.slide-line{
@@ -126,25 +177,6 @@ svg{
     }
   }
 
-  &.close-type{
-    span{
-      width: 100%;
-    }
-
-    &.active{
-      span{
-        &:nth-child(1){
-          transform: rotate(40deg) translateY(6px) translateX(5px);
-        }
-        &:nth-child(2){
-          opacity: 0;
-        }
-        &:nth-child(3){
-          transform: rotate(-45deg) translateY(-5px) translateX(4px);
-        }
-      }
-    }
-  }
 }
 
 /*--- Header navigation ---*/
@@ -157,12 +189,12 @@ svg{
     right: 0;
     bottom: 0;
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color: $color-blue;
     z-index: 11;
     padding: 90px 15px 40px 15px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-content: center;
     transition: all 0.5s;
     transform: translateX(-110%);
     overflow: auto;
@@ -194,6 +226,12 @@ svg{
   font-family: $f-med;
   justify-content: center;
   border: none;
+  transition: all 0.5s;
+
+  @media(max-width: 440px){
+    font-size: 16px;
+    padding: 15px 20px;
+  }
 
   &.blue-btn{
     background-color: $color-blue;
@@ -204,6 +242,10 @@ svg{
       width: 24px;
       height: auto;
       margin-right: 18px;
+
+      @media(max-width: 440px){
+        width: 20px;
+      }
     }
   }
 
@@ -212,16 +254,39 @@ svg{
   }
 
   &:hover{
-
+    filter: sepia(30%);
   }
+
+
 }
 
+/*--- Watermark ---*/
+
+.watermark{
+  font-family: $f-futura;
+}
 /*--- block-title ---*/
 
 .block-title {
   font-size: 45px;
   font-family: $f-bold;
   line-height: 1.17;
+
+  @media(max-width: 992px){
+    font-size: 42px;
+  }
+
+  @media(max-width: 767px){
+    font-size: 40px;
+  }
+
+  @media(max-width: 476px){
+    font-size: 38px;
+  }
+
+  @media(max-width: 440px){
+    font-size: 36px;
+  }
 
   &.small-margin{
     margin-bottom: 15px;
@@ -241,6 +306,22 @@ svg{
   font-size: 28px;
   font-family: $f-bold;
   line-height: 1.3;
+
+  @media(max-width: 992px){
+    font-size: 26px;
+  }
+
+  @media(max-width: 767px){
+    font-size: 24px;
+  }
+
+  @media(max-width: 575px){
+    font-size: 22px;
+  }
+
+  @media(max-width: 440px){
+    font-size: 20px;
+  }
 }
 
 /*--- indent ---*/
@@ -297,16 +378,16 @@ form{
       padding-bottom: 15px;
 
       &::-webkit-input-placeholder {
-        color: rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.7);
       }
       &:-moz-placeholder {
-        color: rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.7);
       }
       &::-moz-placeholder {
-        color: rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.7);
       }
       &:-ms-input-placeholder {
-        color: rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.7);
       }
     }
   }
@@ -356,62 +437,15 @@ form{
 
 /*--------- ANIMATION ------------*/
 
-
-.menu-slider{
-  -webkit-animation: slide-menu 1s infinite ease-in-out;
-  animation: slide-menu 1s infinite ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+.first-up,
+.second-up,
+.third-up{
+  opacity: 0 !important;
+  transform: translateY( 30px) !important;
+  transition: all 0.5s !important;
 }
 
-@-webkit-keyframes slide-menu {
-  0% {
-    right: -200px;
-  }
-
-  100% {
-    right: 0;
-  }
-}
-
-@keyframes slide-menu {
-  0% {
-    right: -200px;
-  }
-
-  100% {
-    right: 0;
-  }
-}
-
-.menu-slider-out{
-  -webkit-animation: slide-menu-out 1s infinite ease-in-out;
-  animation: slide-menu-out 1s infinite ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-
-@-webkit-keyframes slide-menu-out {
-  0% {
-    right: 0;
-  }
-
-  100% {
-    right: -200px;
-  }
-}
-
-@keyframes slide-menu-out {
-  0% {
-    right: 0;
-  }
-
-  100% {
-    right: -200px;
-  }
+.animate{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

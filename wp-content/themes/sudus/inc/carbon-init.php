@@ -60,6 +60,14 @@
 	require ('carbon-blocks/home-way-treatment.php');
 	require ('carbon-blocks/home-faq.php');
 	require ('carbon-blocks/home-contact-form.php');
+	require ('carbon-blocks/home-contacts.php');
+	require ('carbon-blocks/operation_care_your_heart.php');
+	require ('carbon-blocks/operation_price.php');
+	require ('carbon-blocks/operation-course.php');
+	require ('carbon-blocks/operation-indications-contraindications.php');
+	require ('carbon-blocks/operation-about.php');
+	require ('carbon-blocks/operation-form-call.php');
+	require ('carbon-blocks/thx-main-screen.php');
 
 	require ('carbon-blocks/about-block.php');
 

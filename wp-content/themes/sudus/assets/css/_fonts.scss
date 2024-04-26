@@ -42,4 +42,15 @@
   font-display: swap; //обязательно
 }
 
+@font-face {
+  font-family: "FuturaPT-Bold";
+  src: url("../fonts/FuturaPT-Bold/FuturaPT-Bold.eot");
+  src: url("../fonts/FuturaPT-Bold/FuturaPT-Bold.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/FuturaPT-Bold/FuturaPT-Bold.woff") format("woff"),
+  url("../fonts/FuturaPT-Bold/FuturaPT-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap; //обязательно
+}
+
 

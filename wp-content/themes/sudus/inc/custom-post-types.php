@@ -89,15 +89,16 @@
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
+			'show_in_rest'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'our_operations' ),
+			'rewrite'            => array( 'slug' => 'our-operations' ),
 			'capability_type'    => 'post',
 			'has_archive'        => false,
-			'hierarchical'       => false,
-			'exclude_from_search'=> false,
+			'hierarchical'       => true,
+			'exclude_from_search'=> true,
 			'menu_position'      => 6,
 			'menu_icon'          => 'dashicons-list-view',
-			'supports'           => array( 'title', 'editor',)
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 		);
 
 		register_post_type( 'our_operations', $args );
@@ -148,7 +149,7 @@
 			'exclude_from_search'=> false,
 			'menu_position'      => 7,
 			'menu_icon'          => 'dashicons-list-view',
-			'supports'           => array( 'title', )
+			'supports'           => array( 'title', 'thumbnail')
 		);
 
 		register_post_type( 'reviews', $args );

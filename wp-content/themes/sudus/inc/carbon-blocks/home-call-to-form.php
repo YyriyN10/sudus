@@ -19,13 +19,24 @@
 
 		     ->set_category( 'sudus-custom-category')
 		     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+
+
+			     $policyPage = carbon_get_theme_option( 'policy_page' );
+			     $pageId     = [];
+
+			     foreach ( $policyPage as $item ) {
+
+				     array_push( $pageId, $item['id'] );
+			     }
+
+
 			     ?>
 
 			     <!-- Досвід лікаря -->
 			     <section class="call-form">
 				     <div class="container">
 					     <div class="row">
-						     <div class="content col-lg-10 offset-lg-1 col-12">
+						     <div class="content col-xl-10 offset-xl-1 col-12">
 							     <div class="inner">
 								     <h2 class="subtitle col-12 text-center"><?php echo $fields['home_call_form_block_title'];?></h2>
 								     <form action="">
@@ -37,7 +48,7 @@
 									     </div>
 									     <button type="submit" class="button red-btn"><?php echo $fields['home_call_form_btn_text'];?></button>
 								     </form>
-								     <p>Відправляючи свої дані, я ознайомлений(а) з <a href="">Політикою конфіденційності</a></p>
+								     <p>Відправляючи свої дані, я ознайомлений(а) з <a href="<?php echo get_page_link( $pageId[0] );?>" target="_blank">Політикою конфіденційності</a></p>
 							     </div>
 						     </div>
 					     </div>

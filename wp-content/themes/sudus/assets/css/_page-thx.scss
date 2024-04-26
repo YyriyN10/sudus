@@ -1,0 +1,109 @@
+
+/*--- thx-main-screen ---*/
+
+.thx-main-screen{
+  position: relative;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 210px;
+  padding-bottom: 210px;
+  color: $color-white;
+  overflow: hidden;
+
+  @media(max-width: 1200px){
+    padding-top: 190px;
+    padding-bottom: 190px;
+  }
+
+  @media(max-width: 992px){
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: $color-blue;
+    opacity: 0.9;
+  }
+
+  .watermark{
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    opacity: 0.1;
+    font-size: 15.5vw;
+    margin-bottom: 0;
+    top: 0;
+    left: 0;
+
+    @media(max-width: 575px){
+      top: 50px;
+    }
+  }
+
+  .content{
+    position: relative;
+    z-index: 3;
+  }
+
+  .pulse{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+
+    @media(max-width: 767px){
+      width: 120vw;
+    }
+
+    @media(max-width: 440px){
+      width: 150vw;
+    }
+  }
+
+  h1{
+    font-size: 65px;
+    font-family: $f-reg;
+
+    @media(max-width: 1200px){
+      font-size: 62px;
+    }
+
+    @media(max-width: 992px){
+      font-size: 60px;
+    }
+
+    @media(max-width: 767px){
+      font-size: 58px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 56px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 13vw;
+    }
+
+    span{
+      display: block;
+      font-family: $f-bold;
+    }
+  }
+
+  p{
+    max-width: 400px;
+    margin: 0 auto 40px;
+  }
+}

@@ -33,13 +33,13 @@
 			     ?>
 
 			     <!-- Переваги клініки -->
-			     <section class="advantages-clinic indent-top-big indent-bottom-big">
+			     <section class="advantages-clinic indent-top-big indent-bottom-big animation-tracking" id="about-clinic">
 				     <div class="container">
-					     <div class="row">
+					     <div class="row first-up">
 						     <h2 class="block-title col-12 text-center"><?php echo $fields['home_advantages_clinic_block_title'];?></h2>
 					     </div>
 					     <?php if( $fields['home_advantages_clinic_list'] ):?>
-						     <div class="row">
+						     <div class="row second-up">
 									<ul class="col-12 content">
 										<?php foreach( $fields['home_advantages_clinic_list'] as $item ): $i++;?>
 											<?php if( $i == 2 ):?>
@@ -50,14 +50,20 @@
 															alt="<?php echo get_post_meta($item['image'], '_wp_attachment_image_alt', TRUE);?>"
 														>
 													</span>
-													<span class="subtitle"><?php echo $item['name'];?></span>
-													<span class="text"><?php echo $item['text'];?></span>
-													<span class="number">0<?php echo $i;?></span>
+                          <span class="info">
+                            <span class="subtitle"><?php echo $item['name'];?></span>
+													  <span class="text"><?php echo $item['text'];?></span>
+                          </span>
+                          <span class="number">0<?php echo $i;?></span>
+
 												</li>
 											<?php else:?>
 												<li class="item">
-													<span class="subtitle"><?php echo $item['name'];?></span>
-													<span class="text"><?php echo $item['text'];?></span>
+                          <span class="info">
+                            <span class="subtitle"><?php echo $item['name'];?></span>
+													  <span class="text"><?php echo $item['text'];?></span>
+                          </span>
+
 													<span class="pic-wrapper absolut">
 														<img
 															src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"
@@ -73,13 +79,13 @@
 									</ul>
 						     </div>
 					     <?php endif;?>
-					     <?php if( $fields['home_advantages_clinic_video'] ):?>
+					     <?php /*if( $fields['home_advantages_clinic_video'] ):*/?><!--
 						     <div class="row">
 							     <div class="video-wrapper col-12">
-								     <video src="$fields['home_advantages_clinic_video']"></video>
+								     <video src="<?php /*echo $fields['home_advantages_clinic_video'];*/?>" controls></video>
 							     </div>
 						     </div>
-					     <?php endif;?>
+					     --><?php /*endif;*/?>
 				     </div>
 			     </section>
 

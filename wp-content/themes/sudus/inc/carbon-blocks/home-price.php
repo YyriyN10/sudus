@@ -26,13 +26,13 @@
 			     ?>
 
 			     <!-- Цини -->
-			     <section class="our-price indent-bottom-big">
+			     <section class="our-price indent-bottom-big animation-tracking" id="our-pice">
 				     <div class="container">
-					     <div class="row">
+					     <div class="row first-up">
 						     <h2 class="block-title basic-margin col-12 text-center"><?php echo $fields['home_price_block_title'];?></h2>
 					     </div>
 					     <?php if( $fields['home_price_text'] ):?>
-						     <div class="row">
+						     <div class="row second-up">
 							     <div class="content text-center col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12">
 								     <p><?php echo $fields['home_price_text'];?></p>
 								     <a href="<?php echo $fields['home_price_file'];?>" download="" class="button blue-btn">

@@ -32,22 +32,22 @@
 			     ?>
 
 			     <!-- Досвід лікаря -->
-			     <section class="doctor-experience indent-top-big indent-bottom-big">
+			     <section class="doctor-experience indent-top-big indent-bottom-big animation-tracking">
 				     <div class="container">
 					     <div class="row">
-                 <h2 class="block-title basic-margin{ col-12 text-center"><?php echo $fields['home_experience_block_title'];?></h2>
+                 <h2 class="block-title basic-margin{ col-12 text-center first-up"><?php echo $fields['home_experience_block_title'];?></h2>
                  <?php if( $fields['home_experience_block_subtitle'] ):?>
-                   <p class="text col-lg-8 offset-lg-2 col-md-10 offset-lg-1 col-12 text-center"><?php echo $fields['home_experience_block_subtitle'];?></p>
+                   <p class="text col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12 text-center second-up"><?php echo $fields['home_experience_block_subtitle'];?></p>
                  <?php endif;?>
                  <?php if( $fields['home_experience_type_list'] ): $i = 0; $j = 0;?>
-                   <ul class="nav nav-tabs col-12">
+                   <ul class="nav nav-tabs col-12 third-up">
                      <?php foreach( $fields['home_experience_type_list'] as $item ): $i++;?>
                        <li class="nav-item">
                          <a class="nav-link" data-toggle="tab" href="#experience<?php echo $i;?>"><?php echo $item['name'];?></a>
                        </li>
                      <?php endforeach;?>
                    </ul>
-                   <div class="tab-content col-12">
+                   <div class="tab-content col-12 third-up">
                      <?php foreach( $fields['home_experience_type_list'] as $item ): $j++;?>
                        <div class="tab-pane" id="experience<?php echo $j;?>">
                          <div class="inner">

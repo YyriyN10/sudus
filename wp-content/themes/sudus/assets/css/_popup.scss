@@ -1,0 +1,150 @@
+
+/*--- video-modal ---*/
+
+.video-modal{
+
+  .modal-dialog{
+    width: 60%;
+    max-width: 60%;
+
+    @media(max-width: 767px){
+      width: 90%;
+      max-width: 90%;
+    }
+
+    @media(max-width: 440px){
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .modal-content{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0);
+  }
+
+  .modal-header{
+    .close{
+      padding: 0;
+      margin: 0;
+      right: 10px;
+      width: 30px;
+      top: 10px;
+      z-index: 2;
+
+      @media(max-width: 767px){
+        width: 20px;
+      }
+
+      svg{
+        width: 100%;
+        height: auto;
+        path{
+          fill: $color-red;
+        }
+      }
+    }
+  }
+
+  .video-wrapper{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    video{
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      border-radius: 8px;
+    }
+  }
+}
+
+/*--- Form Modal ---*/
+
+.form-modal{
+  padding-top: 50px;
+
+  .modal-dialog{
+    width: 540px;
+    max-width: 540px;
+
+    @media(max-width: 767px){
+      width: 90%;
+      max-width: 90%;
+    }
+  }
+
+  .modal-content{
+    padding: 40px;
+    background-color: $color-white;
+    border-radius: 8px !important;
+    overflow: hidden;
+
+    @media(max-width: 440px){
+      padding: 30px;
+    }
+  }
+
+  .modal-header{
+    .close{
+      padding: 0;
+      margin: 0;
+      width: 20px;
+      top: -30px;
+      right: -30px;
+
+      @media(max-width: 440px){
+        top: -20px;
+        right: -20px;
+      }
+
+      svg{
+        path{
+          fill: $color-red;
+        }
+      }
+    }
+  }
+
+  form{
+    text-align: center;
+
+    .form-group{
+      margin-bottom: 30px;
+
+      .form-control{
+        border-color: $color-black;
+        color: $color-black;
+
+        &::-webkit-input-placeholder {
+          color: rgba(49,49,49,0.7);
+        }
+        &:-moz-placeholder {
+          color: rgba(49,49,49,0.7);
+        }
+        &::-moz-placeholder {
+          color: rgba(49,49,49,0.7);
+        }
+        &:-ms-input-placeholder {
+          color: rgba(49,49,49,0.7);
+        }
+      }
+    }
+
+    .button{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    p{
+      font-size: 14px;
+
+      a{
+        color: $color-black !important;
+      }
+    }
+  }
+}

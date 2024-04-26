@@ -27,38 +27,42 @@
 			     ?>
 
 			     <!-- Шлях лікування -->
-			     <section class="way-treatment indent-top-big indent-bottom-big">
+			     <section class="way-treatment indent-top-big indent-bottom-big animation-tracking">
 				     <div class="container">
-					     <div class="row">
+					     <div class="row first-up">
 						     <h2 class="block-title larg-margin col-12 text-center"><?php echo $fields['home_way_treatment_block_title'];?></h2>
 					     </div>
-					     <div class="content col-12">
-						     <?php if( $fields['home_way_treatment_list'] ):?>
-							     <ul class="way-list">
-								     <?php foreach( $fields['home_way_treatment_list'] as $item ): $i++;?>
-									     <li class="item">
-										     <p class="step-name">
-											     <?php if( $i < 10 ):?>
-												     0<?php echo $i;?><span>.</span> <?php echo $item['name'];?>
-												   <?php else:?>
-												     <?php echo $i;?><span>.</span> <?php echo $item['name'];?>
-											     <?php endif;?>
-										     </p>
-										     <div class="text"><?php echo wpautop($item['description']);?></div>
-									     </li>
-								     <?php endforeach;?>
-							     </ul>
-						     <?php endif;?>
-									<?php if( $fields['home_way_treatment_image'] ):?>
-										<div class="pic-wrapper">
-											<img
-												src="<?php echo wp_get_attachment_image_src($fields['home_way_treatment_image'], 'full')[0];?>"
-												alt="<?php echo get_post_meta($fields['home_way_treatment_image'], '_wp_attachment_image_alt', TRUE);?>"
-											>
-										</div>
-									<?php endif;?>
-					     </div>
+               <div class="row">
+                 <div class="content col-12 second-up">
+		               <?php if( $fields['home_way_treatment_list'] ):?>
+                     <ul class="way-list">
+				               <?php foreach( $fields['home_way_treatment_list'] as $item ): $i++;?>
+                         <li class="item">
+                           <p class="step-name">
+							               <?php if( $i < 10 ):?>
+                               0<?php echo $i;?><span>.</span> <?php echo $item['name'];?>
+							               <?php else:?>
+								               <?php echo $i;?><span>.</span> <?php echo $item['name'];?>
+							               <?php endif;?>
+                           </p>
+                           <div class="text"><?php echo wpautop($item['description']);?></div>
+                         </li>
+				               <?php endforeach;?>
+                     </ul>
+		               <?php endif;?>
+		               <?php if( $fields['home_way_treatment_image'] ):?>
+                     <div class="pic-wrapper">
+                       <img
+                           src="<?php echo wp_get_attachment_image_src($fields['home_way_treatment_image'], 'full')[0];?>"
+                           alt="<?php echo get_post_meta($fields['home_way_treatment_image'], '_wp_attachment_image_alt', TRUE);?>"
+                       >
+                     </div>
+		               <?php endif;?>
+                 </div>
+               </div>
+
 				     </div>
+             <p class="watermark">heart care</p>
 			     </section>
 
 			     <?php

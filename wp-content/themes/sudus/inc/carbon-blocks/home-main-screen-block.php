@@ -35,7 +35,7 @@
 						           <p><?php echo $fields['home_main_screen_subtitle']; ?></p>
 					           <?php endif;?>
 					           <?php if( $fields['home_main_screen_btn_text'] ):?>
-						           <a href="" class="button red-btn"><?php echo $fields['home_main_screen_btn_text']; ?></a>
+						           <a href="#" rel="nofollow" class="button red-btn" data-toggle="modal" data-target="#formModal"><?php echo $fields['home_main_screen_btn_text']; ?></a>
 					           <?php endif;?>
 				           </div>
 				           <?php if( $fields['home_main_screen_image'] ):?>

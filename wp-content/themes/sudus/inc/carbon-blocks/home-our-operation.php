@@ -34,12 +34,12 @@
 			     $operationList = new WP_Query( $operationArgs );
 
 			     if ( $operationList->have_posts() ) :?>
-			     <section class="our-operation indent-top-big indent-bottom-big">
+			     <section class="our-operation indent-top-big indent-bottom-big animation-tracking" id="our-operation">
 				     <div class="container">
-					     <div class="row">
+					     <div class="row first-up">
 						     <h2 class="block-title col-12 text-center basic-margin"><?php echo $fields['home_our_operation_block_title'];?></h2>
 					     </div>
-               <div class="row">
+               <div class="row second-up">
                  <ul class="content col-12">
 	                 <?php  while ( $operationList->have_posts() ) : $operationList->the_post(); ?>
                     <li class="item">
@@ -52,7 +52,7 @@
                     </li>
 	                 <?php endwhile;?>
                    <li>
-                     <a href="" class="button red-btn" rel="nofollow"><?php echo $fields['home_our_operation_btn_text'];?></a>
+                     <a href="#" class="button red-btn" rel="nofollow" data-toggle="modal" data-target="#formModal"><?php echo $fields['home_our_operation_btn_text'];?></a>
                    </li>
                  </ul>
                </div>

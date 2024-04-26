@@ -1,19 +1,37 @@
 /*--- IMPORT ---*/
 @import "slick-teame";
 @import "slick";
-@import "bootstrap.css";
+@import "bootstrap";
 @import "fonts";
 @import "variables";
 @import "basic";
 @import "popup";
+@import "jquery.fancybox";
 
 
 
 
-/*--- HEADER ---*/
+/*--- Header---*/
 
+@import "header";
+
+/*--- Footer ---*/
+
+@import "footer";
 
 /*--- Page Home ---*/
 
 @import "page-home";
+
+/*--- Operation Page ---*/
+
+@import "operation-page";
+
+/*--- Page 404 ---*/
+
+@import "page-404";
+
+/*--- Page Thx ---*/
+
+@import "page-thx";
 

@@ -21,12 +21,12 @@
 			     ?>
 
 			     <!-- F.A.Q -->
-			     <section class="faq indent-top-big indent-bottom-big">
+			     <section class="faq indent-top-big indent-bottom-big animation-tracking">
 				     <div class="container">
-					     <div class="row">
+					     <div class="row first-up">
 						     <h2 class="block-title larg-margin col-12 text-center"><?php echo $fields['home_faq_block_title'];?></h2>
 					     </div>
-					     <div class="row">
+					     <div class="row second-up">
 						     <div class="accordion-faq col-lg-10 offset-lg-1 col-12" id="accordion-faq">
 							     <?php
 								     $faqArgs = array(
